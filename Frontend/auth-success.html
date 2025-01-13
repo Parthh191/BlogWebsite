@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Verification Success</title>
+    <script>
+        window.onload = function() {
+            // Get token from URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const token = urlParams.get('token');
+            
+            if (token) {
+                // Store token in localStorage
+                localStorage.setItem('authToken', token);
+                
+                // Redirect to home page or dashboard
+                window.location.href = '/dashboard';
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Email Verification Successful!</h1>
+    <p>Redirecting to dashboard...</p>
+</body>
+</html>

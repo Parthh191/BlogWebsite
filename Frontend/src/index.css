@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 100%;
+  }
+  to {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+:root {
+  --gradient-light: linear-gradient(120deg, #f0f0f0, #ffffff, #f8f9fa);
+  --gradient-dark: linear-gradient(120deg, #1a1a1a, #2d2d2d, #1a1a1a);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--gradient-light);
+  background-size: 200% 200%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--gradient-dark);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s linear infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
